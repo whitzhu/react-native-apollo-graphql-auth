@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Button, TextInput, Text } from '@shoutem/ui';
+import { Button, TextInput, Text, Image } from '@shoutem/ui';
 
 export default class AuthScreen extends React.Component {
   constructor(props) {
@@ -20,6 +20,11 @@ export default class AuthScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        <View style={styles.image}>
+          <Image
+            source={require('../../image/icon.png')}
+          />
+        </View>
         <TextInput
           autoFocus
           placeholder="email"
@@ -51,5 +56,9 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 30,
     justifyContent: 'center',
+  },
+  image: {
+    alignItems: 'center',
+    marginBottom: 40,
   },
 });
