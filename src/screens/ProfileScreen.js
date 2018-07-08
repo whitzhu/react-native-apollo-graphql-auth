@@ -1,11 +1,18 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
+import { Button, Text } from '@shoutem/ui';
 
 export default class AuthScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
         <Text>Profile Screen</Text>
+        <Button
+          styleName="secondary"
+          onKeyPress={() => console.log('Log out')}
+        >
+          <Text>Log Out</Text>
+        </Button>
       </View>
     );
   }
