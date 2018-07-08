@@ -37,7 +37,7 @@ export default class AuthScreen extends React.Component {
           styleName="sm-gutter-bottom" />
         <Button
           styleName="secondary xl-gutter-vertical"
-          onPress={() => console.log('Button pressed')}
+          onPress={() => this.props.navigation.navigate('App')}
         >
           <Text>{ this.state.authStateSignIn ? 'Log In' : 'Sign Up' }</Text>
         </Button>
