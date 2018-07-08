@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, StyleSheet, TextInput, Button } from 'react-native';
+import { View, StyleSheet } from 'react-native';
+import { Button, TextInput, Text } from '@shoutem/ui';
 
 export default class AuthScreen extends React.Component {
   constructor(props) {
@@ -22,21 +23,24 @@ export default class AuthScreen extends React.Component {
         <TextInput
           autoFocus
           placeholder="email"
-          style={styles.input}
-          onChangeText={(text) => this.setState({ email: text })} />
+          onChangeText={(text) => this.setState({ email: text })}
+          styleName="sm-gutter-bottom" />
         <TextInput
           secureTextEntry
           placeholder="password"
-          style={styles.input}
-          onChangeText={(text) => this.setState({ password: text })} />
+          onChangeText={(text) => this.setState({ password: text })}
+          styleName="sm-gutter-bottom" />
         <Button
-          title={ this.state.authStateSignIn ? 'Log In' : 'Sign Up' }
+          styleName="secondary xl-gutter-vertical"
           onPress={() => console.log('Button pressed')}
-        />
+        >
+          <Text>{ this.state.authStateSignIn ? 'Log In' : 'Sign Up' }</Text>
+        </Button>
         <Button
-          title={ this.state.authStateSignIn ? 'Sign Up' : 'Log In' }
           onPress={this.handleAuthStateChange}
-        />
+        >
+          <Text>{ this.state.authStateSignIn ? 'Sign Up' : 'Log In' }</Text>
+        </Button>
       </View>
     );
   }
@@ -45,14 +49,7 @@ export default class AuthScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding: 30,
     justifyContent: 'center',
-    alignItems: 'center',
-  },
-  input: {
-    height: 50,
-    width: 300,
-    padding: 10,
-    marginVertical: 10,
-    alignSelf: 'stretch',
   },
 });
