@@ -3,12 +3,12 @@ import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 import { Font, AppLoading } from 'expo';
 import Navigation from './src/screens/Navigation';
-import authTokenHelper from './src/helpers/authTokenHelper';
+import authHelper from './src/helpers/authHelper';
 
 const client = new ApolloClient({
   uri: 'https://api.graph.cool/simple/v1/cjjdbv8l01dov0158mp7le2b1',
   request: async (operation) => {
-    const token = await authTokenHelper.getToken();
+    const token = await authHelper.getToken();
     operation.setContext({
       headers: {
         authorization: token ? `Bearer ${token}` : null,
