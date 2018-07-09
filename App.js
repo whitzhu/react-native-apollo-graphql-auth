@@ -1,15 +1,23 @@
 import React from 'react';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
-import Navigation from './src/screens/Navigation';
 import { Font, AppLoading } from 'expo';
+import Navigation from './src/screens/Navigation';
+import authHelper from './src/helpers/authHelper';
 
 const client = new ApolloClient({
   uri: 'https://api.graph.cool/simple/v1/cjjdbv8l01dov0158mp7le2b1',
+  request: async (operation) => {
+    const token = await authHelper.getToken();
+    operation.setContext({
+      headers: {
+        authorization: token ? `Bearer ${token}` : null,
+      },
+    });
+  },
 });
 
 export default class App extends React.Component {
-
   constructor(props) {
     super(props);
 
