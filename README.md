@@ -1,6 +1,7 @@
-![React Native Apollo Graphql Auth Boilerplate](./image/icon.png)
+![travyplans](./image/icon.png)
 
-## React Native Apollo Graphql Auth
+## travyplans
+Travyplans is your buddy for every process of the travel journey. From when you first have the idea to planning out the itinerary to finally reconciling expenses!
 
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
