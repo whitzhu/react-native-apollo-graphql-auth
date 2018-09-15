@@ -7,7 +7,6 @@ export default class AuthScreen extends React.Component {
     return (
       <View style={styles.container}>
         <Text>Home Screen</Text>
-        <TripCard></TripCard>
       </View>
     );
   }
